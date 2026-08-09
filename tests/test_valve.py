@@ -162,7 +162,9 @@ def test_frankever_product_match_is_preferred():
     product_ids = ["nzx0kku9d6eq59nt"]
 
     assert frankever.matches_product(product_ids[0])
-    assert frankever.match_quality(FRANKEVER_DPS, product_ids) == 101
+    # 101 for the product id match, plus the dps quality on top so that configs
+    # sharing a product id are ranked by fit rather than by config load order.
+    assert frankever.match_quality(FRANKEVER_DPS, product_ids) == 201
     assert tellur.match_quality(FRANKEVER_DPS) == 100
 
 
