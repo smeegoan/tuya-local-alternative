@@ -233,7 +233,13 @@ class TuyaDeviceConfig:
             if not self._entity_match_analyse(e, keys, matched, dps, product_match > 0):
                 return 0
 
-        return product_match or round((total - len(keys)) * 100 / total)
+        dps_quality = round((total - len(keys)) * 100 / total)
+        # Product id matches rank above dps only matches, but the same product id
+        # can be shared by variants with different dps, so add the dps quality to
+        # break the tie in favour of the closest fit.
+        if product_match:
+            return product_match + dps_quality
+        return dps_quality
 
     def product_display_entries(self, product_ids=None):
         """Return distinct (manufacturer, model) pairs for display in the config flow.

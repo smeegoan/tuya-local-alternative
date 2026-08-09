@@ -608,6 +608,49 @@ def test_match_quality():
     assert q == 0
 
 
+def test_match_quality_breaks_product_id_ties_on_dps():
+    """Configs sharing a product id are ranked by how well their dps fit."""
+    product_ids = ["p8z27dfdwc4riyp9"]
+    color_temp = get_config("create_fan_light")
+    dimmable = get_config("create_fan_lightdimmable")
+
+    assert color_temp.matches_product(product_ids[0])
+    assert dimmable.matches_product(product_ids[0])
+
+    # dps as reported by a colour temp unit: dp 23 present, no dp 22
+    color_temp_dps = {
+        "20": False,
+        "23": 1000,
+        "60": False,
+        "62": 1,
+        "63": "forward",
+    }
+    assert color_temp.match_quality(
+        color_temp_dps, product_ids
+    ) > dimmable.match_quality(color_temp_dps, product_ids)
+
+    # dps as reported by a dimmable unit: dp 22 present, no dp 23
+    dimmable_dps = {
+        "20": False,
+        "22": 500,
+        "60": False,
+        "62": 1,
+        "63": "forward",
+    }
+    assert dimmable.match_quality(dimmable_dps, product_ids) > color_temp.match_quality(
+        dimmable_dps, product_ids
+    )
+
+    # a product id match still outranks any config matched on dps alone
+    assert (
+        min(
+            color_temp.match_quality(color_temp_dps, product_ids),
+            dimmable.match_quality(dimmable_dps, product_ids),
+        )
+        > 100
+    )
+
+
 def test_entity_find_unknown_dps_fails():
     """Test that finding a dps that doesn't exist fails."""
     cfg = get_config("kogan_switch")
