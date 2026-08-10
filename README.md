@@ -1,7 +1,10 @@
 ![logo](custom_components/tuya_local/brand/icon.svg) 
 
-Please report any [issues](https://github.com/make-all/tuya-local/issues) and feel free to raise [pull requests](https://github.com/make-all/tuya-local/pulls).
-[Many others](https://github.com/make-all/tuya-local/blob/main/ACKNOWLEDGEMENTS.md) have contributed their help already.
+This fork exists to carry two patches upstream has declined (see "Why this fork exists" below).
+For general bugs and device requests, report them upstream at
+[make-all/tuya-local](https://github.com/make-all/tuya-local/issues); this fork does not accept
+unrelated contributions. Credit for the integration itself belongs to
+[Jason Rumney and the many other contributors](https://github.com/make-all/tuya-local/blob/main/ACKNOWLEDGEMENTS.md).
 
 [![BuyMeCoffee](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/jasonrumney)
 
@@ -31,14 +34,13 @@ easier to set up using that, or another more recent fork, as an alternative.
 
 ## Why this fork exists
 
-This is a fork of [make-all/tuya-local](https://github.com/make-all/tuya-local) &mdash; nearly all
-of the code, and this README, come from that project, and the credit for it belongs to Jason
-Rumney (make-all) and its many other contributors. It exists to keep two fixes running that the
+This is a fork of [make-all/tuya-local](https://github.com/make-all/tuya-local): nearly all of the
+code, and most of this README, come from that project. It exists to keep two fixes running that the
 upstream maintainer has declined to merge, for devices this fork's author actually owns:
 
 - **[Product id tie-breaking](https://github.com/make-all/tuya-local/issues/5854)** (closed
-  `not_planned`). When two different devices share the same Tuya product id &mdash; for example two
-  different Create XW-FAN-215-D variants that both declare product id `p8z27dfdwc4riyp9` &mdash;
+  `not_planned`). When two different devices share the same Tuya product id (for example, two
+  different Create XW-FAN-215-D variants that both declare product id `p8z27dfdwc4riyp9`),
   `match_quality` picked whichever device config happened to be read from disk first, rather than
   the one that actually fit the device's reported data points. The fix ranks product-id matches by
   their dps fit too, so the tie is broken by which config actually matches, not by file read order.
@@ -53,7 +55,7 @@ conversation there.
 
 This fork tracks upstream `main` closely and carries only the two patches above on top of it. If
 you don't specifically need them, use
-[make-all/tuya-local](https://github.com/make-all/tuya-local) instead &mdash; it's the actively
+[make-all/tuya-local](https://github.com/make-all/tuya-local) instead: it's the actively
 maintained original, and new device support and bug fixes land there first. This fork is not a
 general-purpose alternative and does not accept unrelated device-support contributions; it exists
 solely to carry these two patches forward.
@@ -79,8 +81,8 @@ thing in one click:
 
 [![Open your Home Assistant instance and open a repository inside the Home Assistant Community Store.](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=smeegoan&repository=tuya-local-alternative&category=integration)
 
-There are no GitHub releases on this fork, so HACS installs directly from the `main` branch &mdash;
-that's expected, and is how the two patches above stay included.
+There are no GitHub releases on this fork, so HACS installs directly from the `main` branch: that's
+expected, and is how the two patches above stay included.
 
 **Do not install this alongside the official `make-all/tuya-local`.** Both use the same
 `tuya_local` integration domain, so remove one before adding the other.
@@ -218,23 +220,10 @@ if they expose them at all locally. In general, Tuya IR hubs are only
 useful for HA's built in IR support, not for any Tuya features such as their
 predefined (cloud only) device database, or climate device simulation.
 
-## Contributing
-
-Documentation on building a device configuration file is in [/custom_components/tuya_local/devices/README.md](https://github.com/make-all/tuya-local/blob/main/custom_components/tuya_local/devices/README.md)
-
-If your device is not listed, you can find the information required to add a configuration for it in the following locations:
-
-1. When attempting to add the device, if it is not supported, you will either get a message saying the device cannot be recognised at all, or you will be offered a list of devices that are partial matches. You can cancel the process at this point, and look in the Home Assistant log - there should be a message there containing the current data points (dps) returned by the device.
-2. If you have signed up for [iot.tuya.com](https://iot.tuya.com/), you should have access to the API Explorer under "Cloud". Under "Device Control" there is a function called "Query Things Data Model", which returns the dp id in addition to range information that is needed for integer and enum data types.
-
-If you file an issue to request support for a new device, please include the following information:
-
-1. Logs from this integration showing the LOCAL DPS actually received from the device.
-2. Identification of the device, such as model and brand name.
-3. As much information on the datapoints you can gather using the above methods.
-4. If manuals or webpages are available online, links to those help understand how to interpret the technical info above - even if they are not in English automatic translations can help, or information in them may help to identify identical devices sold under other brands in other countries that do have English or more detailed information available.
-
-If you submit a pull request, please understand that the config file naming and details of the configuration may get modified before release - for example if your name was too generic, I may rename it to a more specific name, or conversely if the device appears to be generic and sold under many brands, I may change the brand specific name to something more general.  So it may be necessary to remove and re-add your device once it has been integrated into a release.
+Want to add support for a new device, or build a device configuration file? That process, and
+requesting new device support, is unchanged from upstream: see
+[make-all/tuya-local's Contributing docs](https://github.com/make-all/tuya-local/blob/main/custom_components/tuya_local/devices/README.md)
+and file it there, not on this fork.
 
 ---
 
@@ -354,12 +343,4 @@ integration, which is compatible with Tuya Local.
 ## Pet feeders
 
 Many pet feeders expose an encoded **Meal plan** setting via a text entity. By default this is disabled, but you can enable it under the Device settings in HA. When enabled many pet feeders share the same underlying format, which is supported by the [FrederikM97/mealplan-card](https://github.com/FredrikM97/mealplan-card) custom card.
-
-## Contributing
-
-Beyond contributing device configs, here are some areas that could benefit from more hands:
-
-1. Unit tests. This integration is mostly unit-tested thanks to the upstream project, but there are a few more to complete. Focus on unit tests is on python code, the current coverage is summarised in reports on github, but to get full coverage details you can run the tests yourself.
-2. Once unit tests are complete, the next task is to properly evaluate against the Home Assistant quality scale.
-3. Discovery. Local discovery is currently limited to finding the IP address in the cloud assisted config. Performing discovery in background would allow notifications to be raised when new devices are noticed on the network, and would provide a productKey for the manual config method to use when matching device configs.
 
