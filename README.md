@@ -46,7 +46,11 @@ upstream maintainer has declined to merge, for devices this fork's author actual
   their dps fit too, so the tie is broken by which config actually matches, not by file read order.
 - **[Energy sensor for the Gosund SP211](https://github.com/make-all/tuya-local/pull/4070)**
   (closed without merging). Exposes dp 17/25 as a dedicated, hidden diagnostic Energy sensor
-  instead of leaving them as an opaque `add_ele`/`ele_calibration` pair.
+  instead of leaving them as an opaque `add_ele`/`ele_calibration` pair. Note that on this device,
+  the metering dps (current/power/voltage/energy) go silent entirely, locally and in the vendor
+  app, if the device loses internet access: they appear to depend on an occasional cloud check-in
+  even though `tuya_local` reads them locally. If yours are stuck on `unknown`, check whether
+  anything on your network (a firewall rule, an "isolate this device" toggle, etc.) is blocking it.
 
 Neither is a code-quality disagreement; both are device-behavior judgment calls the maintainer made
 differently than this fork's author would for their own hardware. Pull request creation against
