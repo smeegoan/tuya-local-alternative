@@ -70,7 +70,7 @@
 - Magnum MRC floor heating (2 variants)
 - Mellerware Comfy electric radiator (tested with Medium 1200W)
 - Modern Ember Vibrance XH-BG-15W/30WZKWIFI-10 electric fireplace
-- Modern Flames Orion electric fireplace
+- Modern Flames Orion and Landscape Pro Slim electric fireplaces
 - Nedis ceramic PTC fan heater
 - Nedis convection heater - WIFIHTPL20F model
 - Nutromo SH014 space heater
@@ -234,6 +234,7 @@
 - Envirosun ES330M9 hot water system
 - Ferroli EGEA and Titano Twin water heaters
 - Fisher air to water heat pump
+- Gamp BCV 300 water heat pump
 - Geyserwise TSE1 and MWS Geyser controller kits
 - Giatsu VAW 2 heat pump water heater
 - Haier air-water combo heat pump
@@ -333,7 +334,7 @@
 - Polytherm Polyalpha thermostat
 - ProWarm Touch Button S series underfloor heating controller
 - Psmart T436 thermostat
-- Rhino King XNW-AC 3-speed and Smart AC thermostats
+- Rhino King XNW-AC 3-speed, Smart AC, H7 central HVAC thermostats
 - RYRA TYTE-D1 thermostat with energy monitoring
 - Sajun steam room
 - Salcar T9W thermostat _(likely also Tellur TSH02)_
@@ -398,6 +399,7 @@
 - eLinkSmart KH-SY2626 pedestal fan
 - Fanco Eco Silent Deluxe ceiling fan with LED light
 - Fanforce ceiling fan with light
+- Fiero Bravia 46Wi ceiling fan
 - Fisher F-ERVQ-B150CO2 heat recovery ventilator
 - FlinQ Breeze indoor pedestal fan
 - Funai Fuji ERW-150 Ultimate ventilation fan
@@ -413,6 +415,7 @@
 - HomCom 6-speed tower fan
 - Homebase 12" oscillating fan
 - HomeMate 5 speed fan regulator
+- Homlit ceiling fan with light
 - Howeall register booster fan (also branded Sanycasa)
 - Humhold 24" low profile ceiling fan with RGB+CW lights
 - Hunter Pacific 6 and 9 speed ceiling fans with light
@@ -445,7 +448,7 @@
 - NP-DVL-01 ceiling fan with RGB+CW light
 - OmniBreeze DC2313R tower fan (4-speed and 5-speed models)
 - Orison Chanfok Neo ceiling fan with light
-- Orison RGB ambient bladeless ceiling fan
+- Orison Chanfok Neo, RGB ambient bladeless, and RGB+CW ceiling fans
 - Ovlaim ceiling fan with cool/warm white dimmable light
 - Pioneer ECOasis 150 ERV
 - Plikc Ario WiFi air vent
@@ -496,6 +499,7 @@
 - Cecotec TotalPure purifier
 - Cleverio AP100 air purifier
 - ComfortZone AP100 air purifier
+- Dayette AP409 air purifier
 - Duux Bright air purifier
 - essentials portable air purifier
 - Himox H05 and H06 air purifiers
@@ -538,7 +542,7 @@
 - Arida S7L-2 dehumidifier
 - Belair Baltic Irradio 20L dehumidifier
 - Cecotec BigDry 4000 dehumidifier
-- Clean Air Optima CA-702 dehumidifier
+- Clean Air Optima CA-702 and CA-707 dehumidifiers
 - Cleverio AD100 dehumidifier
 - Climative DH-20S Cube ION dehumidifier
 - DH-CSK03W dehumidifier
@@ -716,6 +720,7 @@
 - PC321-TY 3 phase power clamp meter
 - PC473 3-phase energy monitor
 - PJ-1103, PJ-1103A power clamp meters
+- PowBay JGQW01-63 energy monitoring circuit breaker
 - PZIOT E01 energy meter
 - SG600MD solar inverter (also SG700MD, other SGxx0MD and SGxx0W models) sold under various brands
 - SmartMCB SMT006 energy meter (10 byte and 8 byte phase info variants)
@@ -758,6 +763,7 @@
 - Demuda 4048/6048 MPPT solar charge controller
 - Dowell iOneAIO EV charger
 - EcoPoint EV charger
+- eLoad Gen2 EV charger
 - Emini 16A Public EV charger
 - EVSun EV charger
 - Feyree EV charger (several models)
@@ -1058,6 +1064,7 @@ of device.
 - QS-WIFI-C01(BK) curtain module
 - QS-WIFI-C02 dual curtain module
 - Safe CON09 barrier controller
+- Shanglin Motor FD-1515 Pergola controller
 - SHerko curtain motor
 - SmartCurtains A-series ACS-WT curtain motor (may work for other models)
 - Wistar roller blind controller
@@ -1300,9 +1307,7 @@ port and password.
 - Gidrolock Standard water leak detection valve
 - Haozee water valve, and 12 valve sprinkler controller
 - Hoenyzy DN15 / DN20 / DN25 gas and water valve timers
-- Holman WX1 tap timer (sprinkler controller)
-- Holman WX2 dual tap timer
-- Holman WX8 8 sprinkler irrigation controller
+- Holman WX1, WX2, WX4, WX8 tap timer (sprinkler controller)
 - Inkbird IIC400 irrigation controller
 - Joekol dual pump watering system
 - KRain KRX8 (also KRX6) irrigation controller
@@ -1315,6 +1320,7 @@ port and password.
 - Stahlmann Smart water leak control system
 - Sunlary indoor plant watering system
 - Wasserstein AquaPal water monitor
+- WD-01GDE irrigation controller 
 - Zemismart DP-WBS01 8-zone sprinkler controller (also sold as Benexmart and other brands)
 
 ### Miscellaneous

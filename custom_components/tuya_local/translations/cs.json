@@ -420,7 +420,7 @@
                 "state_attributes": {
                     "mode": {
                         "state": {
-                            "laundry": "Suché prádlo",
+                            "laundry": "Sušení prádla",
                             "purify": "Očistit",
                             "continuous": "Nepřetržitý"
                         }
