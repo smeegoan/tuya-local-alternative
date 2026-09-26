@@ -413,6 +413,9 @@
         "event": {
             "alarm": {
                 "name": "Riasztás"
+            },
+            "notification": {
+                "name": "Értesítés"
             }
         },
         "humidifier": {
@@ -792,6 +795,7 @@
                 "state": {
                     "cancel": "Mégse",
                     "continuous": "Folyamatos",
+                    "custom": "Egyéni",
                     "5s": "5 másodperc",
                     "10s": "10 másodperc",
                     "15s": "15 másodperc",
@@ -864,7 +868,13 @@
                     "4d": "4 nap",
                     "5d": "5 nap",
                     "6d": "6 nap",
-                    "7d": "7 nap"
+                    "7d": "7 nap",
+                    "10d": "10 nap",
+                    "30d": "30 nap",
+                    "60d": "60 nap",
+                    "90d": "90 nap",
+                    "160d": "160 nap",
+                    "365d": "365 nap"
                 }
             },
             "temperature_unit": {
@@ -1154,6 +1164,12 @@
             "ambient_temperature": {
                 "name": "Környezeti hőmérséklet"
             },
+            "inlet_temperature": {
+                "name": "Bemeneti hőmérséklet"
+            },
+            "outlet_temperature": {
+                "name": "Kimeneti hőmérséklet"
+            },
             "cleanliness": {
                 "name": "Tisztaság",
                 "state": {
@@ -1171,6 +1187,17 @@
                     "poor": "Rossz",
                     "severe": "Súlyos",
                     "danger": "Veszély"
+                }
+            },
+            "sd_status": {
+                "name": "SD kártya állapota",
+                "state": {
+                    "fault": "Hiba",
+                    "formatting": "Formázás",
+                    "full": "Teljes",
+                    "missing": "Hiányzik",
+                    "normal": "Normál",
+                    "unformatted": "Nem formázott"
                 }
             },
             "status": {
@@ -1232,6 +1259,7 @@
                     "occupied": "Foglalt",
                     "normal": "Normál",
                     "low": "Alacsony",
+                    "medium": "Közepes",
                     "high": "Magas",
                     "unwashed": "Nem mosott",
                     "pre_washing": "Előmosás",
@@ -1251,8 +1279,6 @@
                     "full": "Teljes",
                     "empty": "Üres",
                     "missing": "Hiányzik",
-                    "formatting": "Formázás",
-                    "unformatted": "Nem formázott",
                     "failed": "Sikertelen",
                     "replying": "Válaszadás",
                     "playback": "Lejátszás",
@@ -1373,6 +1399,9 @@
                     "off": "Nyitott",
                     "on": "Zárt"
                 }
+            },
+            "camera_record": {
+                "name": "Kamera felvétel"
             },
             "do_not_disturb": {
                 "name": "Ne zavarjanak"
